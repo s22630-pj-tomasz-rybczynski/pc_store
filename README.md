@@ -1,1 +1,3 @@
-# pc_store
+# PC Store
+
+## Tomasz Rybczyński s22630
