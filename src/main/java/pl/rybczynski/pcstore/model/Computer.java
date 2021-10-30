@@ -1,14 +1,21 @@
 package pl.rybczynski.pcstore.model;
 
+import javax.persistence.*;
 import java.util.Arrays;
 import java.util.List;
 
+@Entity
 public class Computer {
 
+    @Id
+    @GeneratedValue
     private Integer id;
     private String name;
     private double commission;
+    @OneToMany
     private List<Component> components;
+
+    public Computer() {}
 
     public Computer(Integer id, String name, double commission, List<Component> components) {
         this.id = id;

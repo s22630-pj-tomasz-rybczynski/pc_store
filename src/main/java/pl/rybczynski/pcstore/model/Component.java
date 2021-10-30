@@ -1,8 +1,15 @@
 package pl.rybczynski.pcstore.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 
+@Entity
 public class Component {
+
+    @Id
+    @GeneratedValue
     private Integer id;
     private String brand;
     private String model;
