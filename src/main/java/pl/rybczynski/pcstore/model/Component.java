@@ -1,4 +1,4 @@
-package pl.rybczynski.pcstore.application;
+package pl.rybczynski.pcstore.model;
 
 import java.math.BigDecimal;
 
