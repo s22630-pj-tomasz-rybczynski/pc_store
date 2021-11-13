@@ -2,6 +2,7 @@ package pl.rybczynski.pcstore.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 
@@ -9,14 +10,14 @@ import java.math.BigDecimal;
 public class Component {
 
     @Id
-    @GeneratedValue
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String brand;
     private String model;
     private BigDecimal price;
     public ComponentType componentType;
 
-    public Component(Integer id, String brand, String model, BigDecimal price, ComponentType componentType) {
+    public Component(Long id, String brand, String model, BigDecimal price, ComponentType componentType) {
         this.id = id;
         this.brand = brand;
         this.model = model;
@@ -42,11 +43,11 @@ public class Component {
         this.componentType = componentType;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

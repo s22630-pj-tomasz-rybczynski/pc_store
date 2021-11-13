@@ -8,27 +8,27 @@ import java.util.List;
 public class Computer {
 
     @Id
-    @GeneratedValue
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private double commission;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Component> components;
 
     public Computer() {}
 
-    public Computer(Integer id, String name, double commission, List<Component> components) {
+    public Computer(Long id, String name, double commission, List<Component> components) {
         this.id = id;
         this.name = name;
         this.commission = commission;
         this.components = components;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
